@@ -22,8 +22,9 @@ function App() {
   function incrementCart(index, price){
       cart[index] = cart[index] + 1 || 1;
       setCart({...cart});
-      setCartTotal(cartTotal + price);
-      console.log(cart)
+      const tot_price = cartTotal + price
+      console.log(tot_price)
+      setCartTotal(tot_price);
       
   }
 
