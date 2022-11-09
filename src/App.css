@@ -1,9 +1,10 @@
 /* Add styling for your page here */
 
 .App {
-
+  height: 20%;
 }
 
-.BakeryItem {
-  
+.BakeryItem img {
+    height: 100px;
+    width: 100px;
 }
