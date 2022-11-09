@@ -17,15 +17,19 @@ function App() {
   /* add your cart state code here */
   const arr = []
   const [cart, setCart] = useState(Array(bakeryData.length).fill(0));
-  function incrementCart(index){
+  const [cartTotal, setCartTotal] = useState(0);
+
+  function incrementCart(index, price){
       cart[index] = cart[index] + 1 || 1;
       setCart({...cart});
+      setCartTotal(cartTotal + price);
       console.log(cart)
       
   }
 
   function clearCart(){
       setCart(Array(bakeryData.length).fill(0));
+      setCartTotal(0);
   }
 
 
@@ -43,6 +47,8 @@ function App() {
         {bakeryData.map((item, index) => ( // TODO: map cart to CartItem components)}
           <CartItem item={item} quantity={cart[index]}/>
         ))}
+
+        <h3> Total Price: {cartTotal} </h3>
 
         <button onClick={() => clearCart()}> Clear Cart </button>
       </div>

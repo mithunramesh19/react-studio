@@ -5,7 +5,7 @@ export default function BakeryItem({item, index, onClick}){
         <img src={item.image} alt={item.name} />
         <h3>{item.name}</h3>
         <p>${item.price}</p>
-        <button onClick={() => onClick(index)}> Add to cart</button>
+        <button onClick={() => onClick(index, item.price)}> Add to cart</button>
         </div>
     );
 }
