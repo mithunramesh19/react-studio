@@ -1,11 +1,11 @@
 // TODO: create a component that displays a single bakery item
-export default function BakeryItem(props){
+export default function BakeryItem({item, key, onClick}){
     return (
         <div className="bakery-item">
-        <img src={props.image} alt={props.name} />
-        <h3>{props.name}</h3>
-        <p>${props.price}</p>
-        <button>Add to cart</button>
+        <img src={item.image} alt={item.name} />
+        <h3>{item.name}</h3>
+        <p>${item.price}</p>
+        <button onClick={() => onClick(item)}> Add to cart</button>
         </div>
     );
 }
